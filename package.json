@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "the study of npm",
+  "homepage": "https://github.com/Derrick-MUGISHA/CRUD#readme",
+  "bugs": {
+    "url": "https://github.com/Derrick-MUGISHA/CRUD/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Derrick-MUGISHA/CRUD.git"
+  },
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^1.21.0"
+  }
+}
