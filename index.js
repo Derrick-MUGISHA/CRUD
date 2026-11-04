@@ -1,3 +1,4 @@
+import axios from "axios";
 //  Get 
 
 const query = "phone";
@@ -48,3 +49,40 @@ if (!putResponse.ok) throw new Error(`HTTP ${putResponse.status}`)
 const newPutData = await putResponse.json()
 console.log(newPutData) 
 console.log(putResponse.status) 
+
+
+// PATCH
+
+const patchData = { title: "Muraho Kigali", body: "My first post", userId: 1 }
+const patchId = 1
+
+const patchResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${patchId}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(patchData),
+});
+
+if (!patchResponse.ok) throw new Error(`HTTP ${patchResponse.status}`)
+const newPatchData = await patchResponse.json()
+console.log(newPatchData) 
+console.log(patchResponse.status)
+
+// DELETE
+
+const deleteId = 1
+
+const deleteResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${deleteId}`, {
+    method: "DELETE",
+});
+
+if (!deleteResponse.ok) throw new Error(`HTTP ${deleteResponse.status}`)
+console.log(`Deleted post with ID: ${deleteId}, Status: ${deleteResponse.status}`)
+
+
+// Axios 
+// const 
+// const axios = require("axios");
+
+const axiosResponse = await axios.get("https://jsonplaceholder.typicode.com/posts");
+// const axiosData = axiosResponse.json();
+console.log(`The data is: ${axiosResponse.data}`);
